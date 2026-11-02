@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shilpa Jain | Portfolio</title>
+  <meta name="description" content="Portfolio of action learning projects and professional work experience by Shilpa Jain.">
+  <style>
+    :root {
+      --bg: #faf9f6;
+      --surface: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --accent-soft: #e0e9ff;
+      --border: #e5e7eb;
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+
+    /* Navigation */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav .container {
+      display: flex; justify-content: space-between; align-items: center;
+      height: 60px;
+    }
+    nav .brand { font-weight: 700; color: var(--text); }
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav a { color: var(--muted); font-size: 0.95rem; }
+    nav a:hover { color: var(--accent); text-decoration: none; }
+
+    /* Hero */
+    .hero { padding: 96px 0 72px; }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.15; margin-bottom: 16px; }
+    .hero .role { font-size: 1.25rem; color: var(--accent); font-weight: 600; margin-bottom: 20px; }
+    .hero p.intro { max-width: 680px; color: var(--muted); font-size: 1.1rem; }
+    .hero .cta { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block; padding: 12px 22px; border-radius: 8px;
+      font-weight: 600; font-size: 0.95rem;
+      border: 1px solid var(--accent); color: var(--accent); background: transparent;
+    }
+    .btn.primary { background: var(--accent); color: #fff; }
+    .btn:hover { text-decoration: none; opacity: 0.9; }
+
+    /* Sections */
+    section { padding: 72px 0; border-top: 1px solid var(--border); }
+    section h2 { font-size: 1.9rem; margin-bottom: 8px; }
+    section .lead { color: var(--muted); margin-bottom: 36px; max-width: 680px; }
+
+    /* About */
+    .about-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+    .about-grid p { color: var(--text); max-width: 720px; }
+    .edu { margin-top: 28px; display: grid; gap: 12px; }
+    .edu div { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; }
+    .edu strong { display: block; }
+    .edu span { color: var(--muted); font-size: 0.92rem; }
+
+    /* Cards (projects) */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 28px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .card .tag {
+      align-self: flex-start; font-size: 0.78rem; font-weight: 600;
+      background: var(--accent-soft); color: var(--accent);
+      padding: 4px 10px; border-radius: 999px;
+    }
+    .card h3 { font-size: 1.2rem; }
+    .card .meta { font-size: 0.9rem; color: var(--muted); }
+    .card p { font-size: 0.97rem; }
+    .card ul { padding-left: 18px; font-size: 0.95rem; }
+    .card li { margin-bottom: 4px; }
+    .card .result { font-size: 0.95rem; border-left: 3px solid var(--accent); padding-left: 12px; }
+    .card.wide { grid-column: 1 / -1; }
+
+    /* Timeline (work experience) */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before {
+      content: ""; position: absolute; left: 6px; top: 6px; bottom: 6px;
+      width: 2px; background: var(--border);
+    }
+    .job { position: relative; margin-bottom: 40px; }
+    .job::before {
+      content: ""; position: absolute; left: -27px; top: 6px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--accent); border: 3px solid var(--bg);
+    }
+    .job h3 { font-size: 1.2rem; }
+    .job .company { color: var(--accent); font-weight: 600; }
+    .job .dates { color: var(--muted); font-size: 0.9rem; margin-bottom: 8px; }
+    .job ul { padding-left: 18px; color: var(--text); }
+    .job li { margin-bottom: 6px; }
+
+    /* Contact */
+    .contact-links { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 8px; }
+    footer {
+      border-top: 1px solid var(--border); padding: 28px 0;
+      color: var(--muted); font-size: 0.9rem; text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      nav ul { gap: 12px; font-size: 0.85rem; }
+      nav .brand { font-size: 0.95rem; }
+      .hero { padding: 64px 0 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <span class="brand">Shilpa Jain</span>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Action Learning</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <h1>Hi, I'm Shilpa Jain.</h1>
+      <div class="role">Finance &amp; Strategy Professional · MBA Candidate, Boston University</div>
+      <p class="intro">
+        Chartered Accountant with eight years across statutory audit, FP&amp;A and strategy, most recently
+        leading planning and performance for an $800M business. Now completing an MBA focused on
+        management science and go-to-market strategy.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="#projects">View My Projects</a>
+        <a class="btn" href="#contact">Get in Touch</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p class="lead">Where I have studied, and what I bring to a team.</p>
+      <div class="about-grid">
+        <p>
+          I have always been most motivated by opportunities to learn quickly, take ownership, and make a meaningful
+          contribution, especially when the problem is new and the answer is not obvious.
+        </p>
+        <p>
+          Over nine years, I have worked across very different environments, from statutory audit at EY, to a global
+          energy business at Castrol, to a high growth consumer company at Nykaa. At Nykaa, I built the FP&amp;A
+          function from the ground up and contributed to the company's $722M IPO. Across these roles, I have led
+          planning, partnered with business leaders on pricing and investment decisions, and helped improve the
+          systems and processes behind better decision making.
+        </p>
+        <p>
+          What I enjoy most is bringing structure to ambiguity, understanding what really drives a business, and
+          turning analysis into decisions people can act on. I care about work that creates visible impact, whether
+          that means building something from scratch, solving a complex business problem, or aligning teams around a
+          better path forward.
+        </p>
+        <p>
+          My MBA at Boston University's Questrom School of Business is helping me build on that foundation through
+          strategy, analytics, and emerging technology, alongside my Chartered Accountant training.
+        </p>
+        <p>
+          I am now looking for strategic finance and FP&amp;A roles where I can combine financial discipline, business
+          judgment, curiosity, and cross functional partnership to support sustainable growth and make a meaningful
+          contribution.
+        </p>
+        <p>
+          <strong>Focus areas:</strong> FP&amp;A, forecasting and long range planning, business partnering, unit
+          economics and pricing, investor and board reporting, process improvement and automation.
+        </p>
+      </div>
+      <div class="edu">
+        <div>
+          <strong>MBA, Management Science (STEM-designated), GPA 3.6</strong>
+          <span>Boston University, Questrom School of Business · Expected May 2027</span>
+        </div>
+        <div>
+          <strong>Chartered Accountant</strong>
+          <span>Institute of Chartered Accountants of India (ICAI), Mumbai · 2015</span>
+        </div>
+        <div>
+          <strong>Bachelor of Commerce</strong>
+          <span>J.N. University, Jodhpur, India · 2014</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Action Learning Projects</h2>
+      <p class="lead">
+        Real problems I have worked on with a team, using the action learning cycle of questioning,
+        action, reflection and learning.
+      </p>
+
+      <div class="grid">
+
+        <article class="card wide">
+          <span class="tag">Project 1</span>
+          <h3>Atlassian: Go-to-Market Strategy for Jira Service Management</h3>
+          <div class="meta">Boston University Questrom School of Business · Spring 2026 · Team of four (top-scoring team)</div>
+          <p><strong>The challenge:</strong> Jira Service Management (JSM) had a large base of Jira customers who had not adopted it, but Atlassian lacked the enterprise sales reach and partner ecosystem to convert them and compete with ServiceNow.</p>
+          <p><strong>My role:</strong> Co-author of the team's final consulting report for Atlassian Corporation, including the primary research and the partner program design.</p>
+          <ul>
+            <li>Ran structured stakeholder interviews with a senior go-to-market leader at Atlassian on partner engagement, deal registration and incentives</li>
+            <li>Compared partner program models at AWS, Salesforce, ServiceNow and IBM to find best practices and failure modes</li>
+            <li>Designed three connected programs: a 90-day Agentic Value Sprint, an AI Data Readiness Wedge, and a Managed Services Accelerator planned for Year 2</li>
+            <li>Specified a 90-day Asia-Pacific pilot with day-90 metrics, including time-to-first-demo and sprint-to-close conversion</li>
+          </ul>
+          <p class="result"><strong>Outcome:</strong> Recommended launching with two anchor GSI partners in Asia-Pacific and validating the model through the pilot before global rollout. The team was the top-scoring team in the course.</p>
+          <p class="meta"><strong>Learning:</strong> The main barrier was distribution, not the product. Enterprise buyers trust advisors, so the strategy had to make partners as motivated as Atlassian.</p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Project 2</span>
+          <h3>Stratco: Expanding Energy-Rebate Services into Indiana</h3>
+          <div class="meta">Boston University Questrom · Fall 2026 · Team project</div>
+          <p><strong>The challenge:</strong> Stratco Property Solutions, an NYC-area consultancy that helps building owners cut energy costs and meet regulations, needed a plan for growth, and Indiana was its top-priority state. Most of its services depend on New York rules that don't apply there, so the question was which services could still win in Indiana.</p>
+          <p><strong>My role:</strong> The whole team worked on every stage together: market research, the Indiana analysis, the target-customer matrix and the presentation.</p>
+          <ul>
+            <li>Analyzed Indiana's energy rules, rent regulation, the federal 179D deduction and utility rebate programs to test each Stratco service against local demand</li>
+            <li>Built a three-layer matrix covering state, project type and target customers, with apartments as the top project type</li>
+            <li>Wrote a cited Indiana quick update for the client and reviewed the team's presentation deck</li>
+          </ul>
+          <p class="result"><strong>Outcome:</strong> Identified which services could still work in Indiana, such as utility bill auditing and rebate administration for large multifamily owners, and who to target for each project type. Final recommendation expected by the end of November 2026.</p>
+          <p class="meta"><strong>Learning:</strong> Owners in Indiana will pay for voluntary savings, not to avoid fines, so the pitch has to change when the regulations behind a business model do not travel.</p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Project 3</span>
+          <h3>Rothea: Anti-Aging Skincare Consumer Research</h3>
+          <div class="meta">Boston University Questrom · Fall 2026 · Team project</div>
+          <p><strong>The challenge:</strong> Rothea, an anti-aging skincare brand, needed to understand how consumers choose products and how to position its messaging against competitors such as CeraVe, Olay and Neutrogena.</p>
+          <p><strong>My role:</strong> The whole team worked on every stage together: secondary research, consumer interviews, survey design and analysis.</p>
+          <ul>
+            <li>Researched the anti-aging market and compared Rothea's ingredients and price per ounce against three competitors</li>
+            <li>Conducted consumer interviews and summarized them into findings on messaging, ingredients and price</li>
+            <li>Drafted a consumer survey mapped to five statistical analyses: chi-square, factor and cluster, regression, and one-sample and paired t-tests</li>
+          </ul>
+          <p class="result"><strong>Outcome:</strong> Interviews suggested that "anti-aging" language felt too direct, and that consumers respond to ingredient-led proof and "skin resilience" messaging. Final results expected by the end of November 2026.</p>
+          <p class="meta"><strong>Learning:</strong> Consumers choose by ingredient and visible results rather than by age, so messaging that names the problem works better than messaging about age.</p>
+        </article>
+
+        <article class="card">
+          <span class="tag">Project 4</span>
+          <h3>Staples: Digital Strategy for Revenue Growth</h3>
+          <div class="meta">Boston University Questrom · Fall 2026 · Team project</div>
+          <p><strong>The challenge:</strong> Staples.com had strong fulfillment but a website that made it hard for shoppers to buy and gave brands few places to advertise, which limited both sales and advertising revenue.</p>
+          <p><strong>My role:</strong> The whole team worked on every stage together: comparing the Staples and Nykaa websites, diagnosing the problems, and writing the strategy.</p>
+          <ul>
+            <li>Compared the Staples.com website with Nykaa, my former company, to find where shoppers face friction</li>
+            <li>Defined the problems before any solutions: no brand banners or carousels, category pages that are plain product grids, too many steps to buy, and fast delivery that the site does not show</li>
+            <li>Ranked the problems by revenue impact and effort, and recommended a roadmap, success measures and risks</li>
+          </ul>
+          <p class="result"><strong>Outcome:</strong> Banners and carousels ranked highest for revenue impact, and the team found that delivery speed is not the problem, since the weakness is that the site does not tell shoppers how fast delivery is. Final presentation outcome expected by the end of November 2026.</p>
+          <p class="meta"><strong>Learning:</strong> Define the problem before proposing solutions. Staples already sells ads through its media network, so the case has to be about specific gaps on the site, not about whether ads exist.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <h2>Work Experience</h2>
+      <p class="lead">The roles I have held and the work I have done in each.</p>
+
+      <div class="timeline">
+
+        <div class="job">
+          <h3>Summer Intern</h3>
+          <div class="company">Global Futures Group · New York, NY</div>
+          <div class="dates">June 2026 – August 2026</div>
+          <ul>
+            <li>Advised an early-stage venture's founder directly, building the business model, revenue potential, and the financial case behind each commercial opportunity</li>
+            <li>Supported a targeted $3M capital raise by building the financial models and equity story used with prospective investors</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <h3>On-Campus Analyst</h3>
+          <div class="company">Boston University, Online MBA Program · Boston, MA</div>
+          <div class="dates">April 2026 – Present</div>
+          <ul>
+            <li>Equipped leadership to prioritize student-experience initiatives across 450 students by building a correlation-based decision matrix</li>
+            <li>Shaped AI curriculum recommendations by analyzing 314 student and alumni responses across AI governance, strategy, applied tools, and decision-making</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <h3>Senior Manager, Strategy &amp; FP&amp;A</h3>
+          <div class="company">Nykaa · Mumbai, India</div>
+          <div class="dates">March 2021 – August 2025</div>
+          <ul>
+            <li>Advised business unit leaders on where performance was slipping, running the monthly reviews where those decisions were made</li>
+            <li>Owned the quarterly and annual budgeting, revenue forecasting, and resource planning cycle across 14 business units for an $800M business</li>
+            <li>Built the P&amp;L, margin, and cash analysis leaders used to understand what each part of the business earned</li>
+            <li>Improved profitability by identifying $0.6M in realized savings and a further $1.2M action plan with the people who owned the spend</li>
+            <li>Built a centralized finance function from eight hires I made myself, including the standards and processes it still works to</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <h3>Senior Performance Analyst, India and South Asia</h3>
+          <div class="company">Castrol India Limited (a bp company) · Mumbai, India</div>
+          <div class="dates">August 2017 – March 2021</div>
+          <ul>
+            <li>Built the driver-based models behind the budget and rolling forecasts for a $500M business, covering revenue, margin, cash flow, and working capital</li>
+            <li>Contributed to 95% achievement of operating targets by partnering with business leaders on pricing and investment decisions; rated exceptional for performance</li>
+            <li>Delivered global projects with the UK and China teams on a transformation spanning 80+ countries</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <h3>Senior Executive, Statutory Audit</h3>
+          <div class="company">Ernst &amp; Young, India · Mumbai, India</div>
+          <div class="dates">December 2015 – August 2017</div>
+          <ul>
+            <li>Held the day-to-day advisory relationship across seven concurrent clients in technology, telecom, and credit rating agencies, finalizing accounts within statutory deadlines</li>
+            <li>Corrected $3M in improperly deferred revenue for a software client by identifying the error and resolving the revenue recognition position with client leadership</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p class="lead">Interested in working together, or want to know more about any project? Get in touch.</p>
+      <p>Email: <a href="mailto:shilpa01@bu.edu">shilpa01@bu.edu</a></p>
+      <p>Phone: <a href="tel:+18576059200">857.605.9200</a></p>
+      <p>Location: Boston, MA 02134</p>
+      <div class="contact-links">
+        <a href="https://LinkedIn.com/in/shilpajainmba" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      &copy; 2026 Shilpa Jain. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
