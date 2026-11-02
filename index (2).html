@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shilpa Jain | Portfolio</title>
+<meta name="description" content="Shilpa Jain: finance and strategy professional. Action learning projects and work experience.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#F6F7F6; --surface:#FFFFFF; --ink:#16211F; --muted:#5B6B67; --rule:#D9DFDB; --accent:#8A6A2F;
+  --font-display:'Spectral',Georgia,'Times New Roman',serif;
+  --font-body:'IBM Plex Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,'SFMono-Regular',Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){ --bg:#111614; --surface:#181F1C; --ink:#E9EEEB; --muted:#95A29D; --rule:#2A332F; --accent:#C9A35E; color-scheme:dark; }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.6}
+.wrap{max-width:46rem;margin:0 auto;padding:3.5rem 20px 4.5rem}
+a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:1px}
+a:hover{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+.name{font-family:var(--font-display);font-weight:600;font-size:clamp(2.5rem,9vw,3.75rem);line-height:1.02;letter-spacing:-.02em;margin:0}
+.standfirst{font-family:var(--font-display);font-size:clamp(1.05rem,3.4vw,1.3rem);font-style:italic;color:var(--muted);margin:.75rem 0 0;max-width:34rem}
+.locale{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:1.6rem 0 0;display:flex;flex-wrap:wrap;gap:.4rem 1.1rem}
+.cta{margin-top:1.4rem;display:flex;flex-wrap:wrap;gap:.6rem 1.2rem;font-size:.92rem}
+
+section{margin-top:3.25rem}
+h2{font-family:var(--font-mono);font-size:.72rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 1.35rem;padding-bottom:.6rem;border-bottom:1px solid var(--rule)}
+p{margin:0 0 1.05rem;max-width:36rem}
+p:last-child{margin-bottom:0}
+
+.figures{display:grid;grid-template-columns:repeat(auto-fit,minmax(8.5rem,1fr));gap:1.4rem 1.5rem;margin:0}
+.figures div{min-width:0}
+.figures dt{font-family:var(--font-mono);font-variant-numeric:tabular-nums;font-size:1.5rem;font-weight:500;letter-spacing:-.02em;line-height:1.1}
+.figures dd{margin:.35rem 0 0;font-size:.83rem;line-height:1.45;color:var(--muted)}
+
+/* projects */
+.project{padding-block:1.6rem;border-top:1px solid var(--rule)}
+.project:first-of-type{border-top:0;padding-top:.2rem}
+.project-title{font-family:var(--font-display);font-size:1.2rem;font-weight:600;line-height:1.3;margin:0;text-wrap:balance}
+.project-meta{font-family:var(--font-mono);font-size:.76rem;color:var(--muted);margin:.35rem 0 0;letter-spacing:.02em}
+.project p{margin-top:.9rem}
+.project ul{margin:.7rem 0 0;padding:0;list-style:none}
+.project li{position:relative;padding-left:1.1rem;margin-bottom:.55rem;font-size:.94rem;line-height:1.6}
+.project li::before{content:"";position:absolute;left:0;top:.68em;width:.4rem;height:1px;background:var(--accent)}
+.outcome{margin-top:.9rem;padding-left:.9rem;border-left:2px solid var(--accent)}
+.learning{margin-top:.8rem;color:var(--muted);font-size:.93rem}
+
+/* experience */
+.role{display:grid;grid-template-columns:8.5rem 1fr;gap:0 2rem;padding-block:1.6rem;border-top:1px solid var(--rule)}
+.role:first-of-type{border-top:0;padding-top:.2rem}
+.dateline{font-family:var(--font-mono);font-variant-numeric:tabular-nums;font-size:.78rem;line-height:1.5;color:var(--muted);min-width:0;margin:0}
+.dateline span{display:block}
+.role-body{min-width:0}
+.role-title{font-family:var(--font-display);font-size:1.2rem;font-weight:600;line-height:1.3;margin:0;text-wrap:balance}
+.employer{font-size:.93rem;color:var(--muted);margin:.2rem 0 0}
+.role ul{margin:.9rem 0 0;padding:0;list-style:none}
+.role li{position:relative;padding-left:1.1rem;margin-bottom:.6rem;font-size:.94rem;line-height:1.6}
+.role li:last-child{margin-bottom:0}
+.role li::before{content:"";position:absolute;left:0;top:.68em;width:.4rem;height:1px;background:var(--accent)}
+
+/* credentials */
+.cred{display:grid;grid-template-columns:8.5rem 1fr;gap:0 2rem;padding-block:1.25rem;border-top:1px solid var(--rule)}
+.cred:first-of-type{border-top:0;padding-top:.2rem}
+.cred-title{font-weight:500;margin:0;font-size:.98rem}
+.cred-org{font-size:.9rem;color:var(--muted);margin:.15rem 0 0}
+.cred ul{margin:.55rem 0 0;padding-left:1.1rem;list-style:none}
+.cred li{font-size:.88rem;color:var(--muted);line-height:1.55;margin-bottom:.3rem;position:relative}
+.cred li::before{content:"";position:absolute;left:-1.1rem;top:.68em;width:.4rem;height:1px;background:var(--rule)}
+
+/* contact */
+.contact{background:var(--surface);border:1px solid var(--rule);padding:1.6rem 1.5rem;margin:1.1rem 0 0;display:flex;flex-wrap:wrap;gap:1.4rem 2.5rem}
+.contact div{min-width:0}
+.contact dt{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.contact dd{margin:.3rem 0 0;font-size:.95rem;overflow-wrap:anywhere}
+
+footer{margin-top:3.5rem;font-family:var(--font-mono);font-size:.72rem;color:var(--muted);letter-spacing:.05em}
+
+@media (max-width:560px){
+  .role,.cred{grid-template-columns:1fr;gap:.5rem}
+  .dateline{order:-1}
+  .dateline span{display:inline}
+  .dateline span+span::before{content:" · "}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1 class="name">Shilpa Jain</h1>
+    <p class="standfirst">Problem solver and financial modeler with nine and a half years across audit, performance and strategy. Chartered Accountant. MBA candidate at Boston University Questrom.</p>
+    <p class="locale">
+      <span>Boston, Massachusetts</span>
+      <span>Investment banking &amp; business strategy</span>
+    </p>
+    <p class="cta">
+      <a href="#projects">Action learning projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </p>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>I am a go-getter who likes complex, ambiguous problems. I am most motivated by opportunities to learn quickly, take ownership, and make a visible contribution, especially when the answer is not obvious.</p>
+    <p>Over nine years across EY, Castrol and Nykaa, I have built the financial models that leaders used to make decisions, from driver-based plans for a business at Castrol to an $800M revenue plan across 14 business units at Nykaa. At Nykaa I built an FP&amp;A function from scratch and contributed to the company's $722M IPO by preparing the investor business case.</p>
+    <p>Attention to detail is a habit from audit. At EY I corrected $3M of improperly deferred revenue by tracing the accounting back to the underlying contracts. I bring that rigour to strategy work: structuring messy problems, testing the assumptions behind them, and turning the analysis into a recommendation someone can act on.</p>
+    <p>I have led cross-team work, moving decisions through Marketing, Supply Chain and Technology leaders without direct authority over them. I build teams, too: at Nykaa I hired and developed the eight-person team that became the centralized FP&amp;A function.</p>
+    <p>My MBA at Boston University's Questrom School of Business adds strategy, analytics and emerging technology. My projects have covered go-to-market strategy for Atlassian, consumer research for Rothea, and expansion strategy for Stratco and Staples.</p>
+    <p>I am now looking for investment banking and business strategy roles where I can combine financial modeling, structured problem solving and cross-functional partnership to make a meaningful contribution.</p>
+    <p><strong>Focus areas:</strong> financial modeling, business strategy, go-to-market analysis, pricing and unit economics, investor and board reporting, process improvement.</p>
+  </section>
+
+  <section>
+    <h2>Selected figures</h2>
+    <dl class="figures">
+      <div><dt>9.5 yrs</dt><dd>Finance experience across audit, performance and strategy</dd></div>
+      <div><dt>$800M</dt><dd>Revenue plan owned across 14 business units at Nykaa</dd></div>
+      <div><dt>$722M</dt><dd>IPO supported with the investor business case</dd></div>
+      <div><dt>8</dt><dd>Finance hires made to build a centralized FP&amp;A team</dd></div>
+      <div><dt>70%</dt><dd>Reduction in reporting turnaround after an SAP implementation</dd></div>
+      <div><dt>$1.8M</dt><dd>Combined savings at Nykaa: $0.6M realized and $1.2M in an agreed action plan</dd></div>
+    </dl>
+  </section>
+
+  <section id="projects">
+    <h2>Action learning projects</h2>
+
+    <article class="project">
+      <h3 class="project-title">Atlassian: Go-to-Market Strategy for Jira Service Management</h3>
+      <p class="project-meta">Boston University Questrom · Spring 2026 · Team of four · Top-scoring team</p>
+      <p><strong>The challenge:</strong> Jira Service Management had a large base of Jira customers who had not adopted it, but Atlassian lacked the enterprise sales reach and partner ecosystem to convert them and compete with ServiceNow.</p>
+      <p><strong>My role:</strong> The whole team worked on every stage together, including primary research, the partner program analysis and the three-program strategy.</p>
+      <ul>
+        <li>Ran structured stakeholder interviews with a senior go-to-market leader at Atlassian on partner engagement, deal registration and incentives</li>
+        <li>Compared partner program models at AWS, Salesforce, ServiceNow and IBM to find best practices and failure modes</li>
+        <li>Designed three connected programs: a 90-day Agentic Value Sprint, an AI Data Readiness Wedge, and a Managed Services Accelerator planned for Year 2</li>
+        <li>Specified a 90-day Asia-Pacific pilot with day-90 metrics, including time-to-first-demo and sprint-to-close conversion</li>
+      </ul>
+      <p class="outcome"><strong>Outcome:</strong> Recommended launching with two anchor GSI partners in Asia-Pacific and validating the model through the pilot before global rollout.</p>
+      <p class="learning"><strong>Learning:</strong> The main barrier was distribution, not the product. Enterprise buyers trust advisors, so the strategy had to make partners as motivated as Atlassian.</p>
+    </article>
+
+    <article class="project">
+      <h3 class="project-title">Rothea: Anti-Aging Skincare Consumer Research</h3>
+      <p class="project-meta">Boston University Questrom · Fall 2026 · Team project</p>
+      <p><strong>The challenge:</strong> Rothea, an anti-aging skincare brand, needed to understand how consumers choose products and how to position its messaging against competitors such as CeraVe, Olay and Neutrogena.</p>
+      <p><strong>My role:</strong> The whole team worked on every stage together: secondary research, consumer interviews, survey design and analysis.</p>
+      <ul>
+        <li>Researched the anti-aging market and compared Rothea's ingredients and price per ounce against three competitors</li>
+        <li>Conducted consumer interviews and summarized them into findings on messaging, ingredients and price</li>
+        <li>Drafted a consumer survey mapped to five statistical analyses: chi-square, factor and cluster, regression, and one-sample and paired t-tests</li>
+      </ul>
+      <p class="outcome"><strong>Outcome:</strong> Interviews suggested that "anti-aging" language felt too direct, and that consumers respond to ingredient-led proof and "skin resilience" messaging. Final results expected by the end of November 2026.</p>
+      <p class="learning"><strong>Learning:</strong> Consumers choose by ingredient and visible results rather than by age, so messaging that names the problem works better than messaging about age.</p>
+    </article>
+
+    <article class="project">
+      <h3 class="project-title">Stratco: Expanding Energy-Rebate Services into Indiana</h3>
+      <p class="project-meta">Boston University Questrom · Fall 2026 · Team project</p>
+      <p><strong>The challenge:</strong> Stratco Property Solutions, an NYC-area consultancy that helps building owners cut energy costs and meet regulations, needed a plan for growth, and Indiana was its top-priority state. Most of its services depend on New York rules that don't apply there, so the question was which services could still win in Indiana.</p>
+      <p><strong>My role:</strong> The whole team worked on every stage together: market research, the Indiana analysis, the target-customer matrix and the presentation.</p>
+      <ul>
+        <li>Analyzed Indiana's energy rules, rent regulation, the federal 179D deduction and utility rebate programs to test each Stratco service against local demand</li>
+        <li>Built a three-layer matrix covering state, project type and target customers, with apartments as the top project type</li>
+        <li>Wrote a cited Indiana quick update for the client and reviewed the team's presentation deck</li>
+      </ul>
+      <p class="outcome"><strong>Outcome:</strong> Identified which services could still work in Indiana, such as utility bill auditing and rebate administration for large multifamily owners, and who to target for each project type. Final recommendation expected by the end of November 2026.</p>
+      <p class="learning"><strong>Learning:</strong> Owners in Indiana will pay for voluntary savings, not to avoid fines, so the pitch has to change when the regulations behind a business model do not travel.</p>
+    </article>
+
+    <article class="project">
+      <h3 class="project-title">Staples: Digital Strategy for Revenue Growth</h3>
+      <p class="project-meta">Boston University Questrom · Fall 2026 · Team project</p>
+      <p><strong>The challenge:</strong> Staples.com had strong fulfillment but a website that made it hard for shoppers to buy and gave brands few places to advertise, which limited both sales and advertising revenue.</p>
+      <p><strong>My role:</strong> The whole team worked on every stage together: comparing the Staples and Nykaa websites, diagnosing the problems, and writing the strategy.</p>
+      <ul>
+        <li>Compared the Staples.com website with Nykaa, my former company, to find where shoppers face friction</li>
+        <li>Defined the problems before any solutions: no brand banners or carousels, category pages that are plain product grids, too many steps to buy, and fast delivery that the site does not show</li>
+        <li>Ranked the problems by revenue impact and effort, and recommended a roadmap, success measures and risks</li>
+      </ul>
+      <p class="outcome"><strong>Outcome:</strong> Banners and carousels ranked highest for revenue impact, and the team found that delivery speed is not the problem, since the weakness is that the site does not tell shoppers how fast delivery is. Final presentation outcome expected by the end of November 2026.</p>
+      <p class="learning"><strong>Learning:</strong> Define the problem before proposing solutions. Staples already sells ads through its media network, so the case has to be about specific gaps on the site, not about whether ads exist.</p>
+    </article>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <article class="role">
+      <p class="dateline"><span>Jun 2026 —</span><span>Aug 2026</span><span>New York, NY</span></p>
+      <div class="role-body">
+        <h3 class="role-title">Summer Intern</h3>
+        <p class="employer">Global Futures Group</p>
+        <ul>
+          <li>Advised an early-stage venture's founder directly, building the business model, revenue potential, and the financial case behind each commercial opportunity</li>
+          <li>Supported a targeted $3M capital raise by building the financial models and equity story used with prospective investors</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="role">
+      <p class="dateline"><span>Apr 2026 —</span><span>Present</span><span>Boston, MA</span></p>
+      <div class="role-body">
+        <h3 class="role-title">On-Campus Analyst</h3>
+        <p class="employer">Boston University, Online MBA Program</p>
+        <ul>
+          <li>Equipped leadership to prioritize student-experience initiatives across 450 students by building a correlation-based decision matrix</li>
+          <li>Shaped AI curriculum recommendations by analyzing 314 student and alumni responses across AI governance, strategy, applied tools, and decision-making</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="role">
+      <p class="dateline"><span>Mar 2021 —</span><span>Aug 2025</span><span>Mumbai, India</span></p>
+      <div class="role-body">
+        <h3 class="role-title">Senior Manager, Strategy &amp; FP&amp;A</h3>
+        <p class="employer">Nykaa</p>
+        <ul>
+          <li>Advised business unit leaders on where performance was slipping, running the monthly reviews where those decisions were made</li>
+          <li>Owned the quarterly and annual budgeting, revenue forecasting, and resource planning cycle across 14 business units for an $800M business</li>
+          <li>Built the P&amp;L, margin, and cash analysis leaders used to understand what each part of the business earned</li>
+          <li>Improved profitability by identifying $0.6M in realized savings and a further $1.2M action plan with the people who owned the spend</li>
+          <li>Built a centralized finance function from eight hires I made myself, including the standards and processes it still works to</li>
+          <li>Led cross-team initiatives, including an SAP implementation across 200 users that cut reporting turnaround by 70%, moving decisions through Marketing, Category, Supply Chain and Technology leaders with no direct authority over any of them</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="role">
+      <p class="dateline"><span>Aug 2017 —</span><span>Mar 2021</span><span>Mumbai, India</span></p>
+      <div class="role-body">
+        <h3 class="role-title">Senior Performance Analyst, India and South Asia</h3>
+        <p class="employer">Castrol India Limited (a bp company)</p>
+        <ul>
+          <li>Built the driver-based models behind the budget and rolling forecasts for a $500M business, covering revenue, margin, cash flow, and working capital</li>
+          <li>Contributed to 95% achievement of operating targets by partnering with business leaders on pricing and investment decisions; rated exceptional for performance</li>
+          <li>Delivered global projects with the UK and China teams on a transformation spanning 80+ countries</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="role">
+      <p class="dateline"><span>Dec 2015 —</span><span>Aug 2017</span><span>Mumbai, India</span></p>
+      <div class="role-body">
+        <h3 class="role-title">Senior Executive, Statutory Audit</h3>
+        <p class="employer">Ernst &amp; Young, India</p>
+        <ul>
+          <li>Held the day-to-day advisory relationship across seven concurrent clients in technology, telecom, and credit rating agencies, finalizing accounts within statutory deadlines</li>
+          <li>Corrected $3M in improperly deferred revenue for a software client by identifying the error and resolving the revenue recognition position with client leadership</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <h2>Education &amp; credentials</h2>
+
+    <article class="cred">
+      <p class="dateline">Expected May 2027</p>
+      <div class="role-body">
+        <p class="cred-title">MBA, Management Science (STEM-designated) · GPA 3.6</p>
+        <p class="cred-org">Boston University, Questrom School of Business — Boston, MA</p>
+        <ul>
+          <li>Finalist, Questrom TED Talk Competition</li>
+          <li>Top-scoring team, Atlassian Action Learning Project: GSI-led go-to-market strategy for Jira Service Management</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="cred">
+      <p class="dateline">2015</p>
+      <div class="role-body">
+        <p class="cred-title">Chartered Accountant</p>
+        <p class="cred-org">Institute of Chartered Accountants of India (ICAI) — Mumbai, India</p>
+      </div>
+    </article>
+
+    <article class="cred">
+      <p class="dateline">2014</p>
+      <div class="role-body">
+        <p class="cred-title">Bachelor of Commerce</p>
+        <p class="cred-org">J.N. University — Jodhpur, India</p>
+      </div>
+    </article>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <dl class="contact">
+      <div>
+        <dt>Email</dt>
+        <dd><a href="mailto:shilpa01@bu.edu">shilpa01@bu.edu</a></dd>
+      </div>
+      <div>
+        <dt>Phone</dt>
+        <dd><a href="tel:+18576059200">857.605.9200</a></dd>
+      </div>
+      <div>
+        <dt>LinkedIn</dt>
+        <dd><a href="https://www.linkedin.com/in/shilpajainmba" target="_blank" rel="noopener">linkedin.com/in/shilpajainmba</a></dd>
+      </div>
+      <div>
+        <dt>Based in</dt>
+        <dd>Boston, Massachusetts</dd>
+      </div>
+    </dl>
+  </section>
+
+  <footer>&copy; 2026 Shilpa Jain</footer>
+
+</div>
+</body>
+</html>
